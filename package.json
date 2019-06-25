@@ -1,0 +1,40 @@
+{
+  "name": "react-hirc",
+  "version": "1.0.0",
+  "description": "React Hooks (Immer + Reducer + Context)",
+  "repository": "git@github.com:miZyind/react-hirc.git",
+  "author": "miZyind <mizyind@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint --project ."
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {},
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "hooks",
+    "immer",
+    "reducer",
+    "redux",
+    "typescript"
+  ],
+  "homepage": "https://github.com/miZyind/react-hirc#readme",
+  "bugs": {
+    "url": "https://github.com/miZyind/react-hirc/issues"
+  }
+}
