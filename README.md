@@ -104,7 +104,7 @@ export default class MyApp extends App {
 
 ```tsx
 // Node module
-import React from 'react';
+import React, { useEffect } from 'react';
 // Context
 import { useUIContext } from '../contexts/ui';
 
