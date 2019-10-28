@@ -1,14 +1,13 @@
-// Node module
-import React from 'react';
 import produce, { Draft } from 'immer';
-// Type
+import React from 'react';
+
 import {
   ActionCreator,
-  Dispatch,
   ActionsUnion,
-  MappedActionCreators,
+  Dispatch,
   IActionCreators,
   IContext,
+  MappedActionCreators
 } from './types';
 
 function bindActionCreator<Action>(
@@ -66,5 +65,5 @@ export default function createContext<
 
   const useContext = () => React.useContext(Context);
 
-  return { ContextProvider, useContext };
+  return { Context, ContextProvider, useContext };
 }

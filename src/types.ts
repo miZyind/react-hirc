@@ -12,7 +12,7 @@ type MappedActionCreators<
 > = {
   [key in keyof ActionCreators]: (
     ...args: Parameters<ActionCreators[keyof ActionCreators]>
-  ) => void
+  ) => void;
 };
 
 interface IActionCreators<Action> {
