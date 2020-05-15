@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type ActionCreator<Action> = (...args: any[]) => Action;
 
 type Dispatch<Action> = (value: Action) => void;

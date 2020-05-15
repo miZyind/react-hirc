@@ -12,7 +12,7 @@ export default function createAction<T extends string, P, M>(
   type: T,
   payload?: P,
   meta?: M,
-) {
+): { type: T } | { type: T; payload: P } | { type: T; payload: P; meta: M } {
   return meta === undefined
     ? payload === undefined
       ? { type }

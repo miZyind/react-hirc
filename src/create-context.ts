@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import produce, { Draft } from 'immer';
 import React from 'react';
 
@@ -7,15 +8,16 @@ import {
   Dispatch,
   IActionCreators,
   IContext,
-  MappedActionCreators
+  MappedActionCreators,
 } from './types';
 
 function bindActionCreator<Action>(
   actionCreator: ActionCreator<Action>,
   dispatch: Dispatch<Action>,
 ) {
-  return function bind() {
-    return dispatch(actionCreator.apply(null, Array.from(arguments)));
+  return function bind(): void {
+    // eslint-disable-next-line prefer-rest-params
+    return dispatch(actionCreator(...[null, Array.from(arguments)]));
   };
 }
 
@@ -30,6 +32,7 @@ function mapDispatchToActionCreators<
     MappedActionCreators<Action, ActionCreators>
   >(
     produce((draft, [name, creator]) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       draft[name] = bindActionCreator(creator, dispatch);
     }),
     actionCreators,
@@ -45,14 +48,16 @@ export default function createContext<
   actionCreators: ActionCreators,
   recipe: (draft: Draft<State>, action: ActionsUnion<ActionCreators>) => void,
 ) {
-  const reducer = (state: State, action: ActionsUnion<ActionCreators>) =>
+  const reducer = (state: State, action: ActionsUnion<ActionCreators>): State =>
     produce(state, (draft) => recipe(draft, action));
 
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const Context = React.createContext<IContext<State, Action, ActionCreators>>({
     state: initialState,
     actions: actionCreators,
   });
 
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const ContextProvider: React.FC = ({ children }) => {
     const [state, dispatch] = React.useReducer(reducer, initialState);
     const actions = mapDispatchToActionCreators(actionCreators, dispatch);
@@ -63,7 +68,8 @@ export default function createContext<
     );
   };
 
-  const useContext = () => React.useContext(Context);
+  const useContext = (): IContext<State, Action, ActionCreators> =>
+    React.useContext(Context);
 
   return { Context, ContextProvider, useContext };
 }
