@@ -13,9 +13,13 @@ export default function createAction<T extends string, P, M>(
   payload?: P,
   meta?: M,
 ): { type: T } | { type: T; payload: P } | { type: T; payload: P; meta: M } {
-  return meta === undefined
-    ? payload === undefined
-      ? { type }
-      : { type, payload }
-    : { type, payload, meta };
+  if (typeof meta === 'undefined') {
+    if (typeof payload === 'undefined') {
+      return { type };
+    }
+
+    return { type, payload };
+  }
+
+  return { type, payload, meta };
 }

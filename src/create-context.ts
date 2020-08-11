@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import produce, { Draft } from 'immer';
 import React from 'react';
 
@@ -27,7 +26,7 @@ function mapDispatchToActionCreators<
 >(
   actionCreators: ActionCreators,
   dispatch: Dispatch<ActionsUnion<ActionCreators>>,
-) {
+): MappedActionCreators<Action, ActionCreators> {
   return Object.entries(actionCreators).reduce<
     MappedActionCreators<Action, ActionCreators>
   >(
@@ -47,20 +46,23 @@ export default function createContext<
   initialState: State,
   actionCreators: ActionCreators,
   recipe: (draft: Draft<State>, action: ActionsUnion<ActionCreators>) => void,
-) {
+): {
+  Context: React.Context<IContext<State, Action, ActionCreators>>;
+  ContextProvider: React.FC;
+  useContext: () => IContext<State, Action, ActionCreators>;
+} {
   const reducer = (state: State, action: ActionsUnion<ActionCreators>): State =>
     produce(state, (draft) => recipe(draft, action));
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const Context = React.createContext<IContext<State, Action, ActionCreators>>({
     state: initialState,
     actions: actionCreators,
   });
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const ContextProvider: React.FC = ({ children }) => {
     const [state, dispatch] = React.useReducer(reducer, initialState);
     const actions = mapDispatchToActionCreators(actionCreators, dispatch);
+
     return React.createElement(
       Context.Provider,
       { value: { state, actions } },
