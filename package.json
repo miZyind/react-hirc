@@ -34,16 +34,16 @@
     "react": "^16.13.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.27",
-    "@types/react": "^16.9.46",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
-    "@typescript-eslint/parser": "^3.9.0",
-    "eslint": "^7.6.0",
-    "eslint-config-mizyind": "^1.1.10",
+    "@types/node": "^14.6.0",
+    "@types/react": "^16.9.47",
+    "@typescript-eslint/eslint-plugin": "^3.10.0",
+    "@typescript-eslint/parser": "^3.10.0",
+    "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-mizyind": "^1.0.5",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.7"
+    "prettier": "^2.1.0",
+    "typescript": "^4.0.2"
   },
   "eslintConfig": {
     "env": {
@@ -56,32 +56,19 @@
     },
     "plugins": [
       "@typescript-eslint",
-      "prettier"
+      "prettier",
+      "mizyind"
     ],
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/all",
       "prettier/@typescript-eslint",
       "plugin:prettier/recommended",
-      "mizyind"
-    ],
-    "rules": {
-      "@typescript-eslint/naming-convention": [
-        "error",
-        {
-          "selector": "variable",
-          "format": [
-            "camelCase",
-            "UPPER_CASE",
-            "PascalCase"
-          ]
-        }
-      ]
-    }
+      "plugin:mizyind/recommended"
+    ]
   },
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": true,
     "trailingComma": "all"
   }
 }
