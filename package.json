@@ -10,6 +10,7 @@
     "url": "https://github.com/miZyind/react-hirc/issues"
   },
   "scripts": {
+    "prepare": "yarn build",
     "build": "tsc",
     "lint": "eslint \"*/**/*.ts\" --max-warnings 0"
   },
