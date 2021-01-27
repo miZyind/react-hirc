@@ -10,15 +10,17 @@
     "url": "https://github.com/miZyind/react-hirc/issues"
   },
   "scripts": {
-    "prepare": "yarn build",
     "build": "tsc",
-    "lint": "eslint \"*/**/*.ts\" --max-warnings 0"
+    "lint": "eslint src --max-warnings 0"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
+  "engines": {
+    "node": ">=14"
+  },
   "keywords": [
     "react",
     "hooks",
@@ -27,45 +29,23 @@
     "redux",
     "typescript"
   ],
-  "engines": {
-    "node": ">=10"
-  },
   "dependencies": {
-    "immer": "^7.0.9",
-    "react": "^16.13.1"
+    "immer": "^8.0.1",
+    "react": "^17.0.1"
   },
   "devDependencies": {
-    "@types/node": "^14.11.2",
-    "@types/react": "^16.9.49",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-mizyind": "^1.1.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2",
-    "typescript": "^4.0.3"
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "eslint-plugin-mizyind": "^2.1.3",
+    "typescript": "^4.1.3"
   },
   "eslintConfig": {
     "env": {
       "node": true,
       "es6": true
     },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "tsconfig.json"
-    },
-    "plugins": [
-      "@typescript-eslint",
-      "prettier",
-      "mizyind"
-    ],
     "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/all",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended",
-      "plugin:mizyind/recommended"
+      "plugin:mizyind/base"
     ]
   },
   "prettier": {
