@@ -1,7 +1,8 @@
-import produce, { Draft } from 'immer';
+import produce from 'immer';
 import React from 'react';
 
-import {
+import type { Draft } from 'immer';
+import type {
   ActionCreator,
   ActionsUnion,
   Dispatch,
@@ -16,7 +17,7 @@ function bindActionCreator<Action>(
 ) {
   return function bind(): void {
     // eslint-disable-next-line prefer-rest-params
-    return dispatch(actionCreator(...[null, Array.from(arguments)]));
+    dispatch(actionCreator(...[null, Array.from(arguments)]));
   };
 }
 

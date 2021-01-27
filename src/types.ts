@@ -16,9 +16,7 @@ type MappedActionCreators<
   ) => void;
 };
 
-interface IActionCreators<Action> {
-  [name: string]: ActionCreator<Action>;
-}
+type IActionCreators<Action> = Record<string, ActionCreator<Action>>;
 
 interface IContext<
   State,
