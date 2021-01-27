@@ -2,13 +2,18 @@
 
 [![NodeJS](https://img.shields.io/node/v/react-hirc?style=for-the-badge&label=&color=339933&logo=node.js&logoColor=fff)](https://nodejs.org)
 [![NPM](https://img.shields.io/npm/v/react-hirc?style=for-the-badge&label=&color=cb3837&logo=npm)](https://www.npmjs.com/package/react-hirc)
-[![TypeScript](https://img.shields.io/npm/dependency-version/react-hirc/dev/typescript?style=for-the-badge&label=&color=007acc&logo=typescript)](https://www.typescriptlang.org)
-[![React](https://img.shields.io/npm/dependency-version/react-hirc/react?style=for-the-badge&label=&color=61dafb&logo=react&logoColor=fff)](https://reactjs.org)
-[![Prettier](https://img.shields.io/github/package-json/dependency-version/mizyind/react-hirc/dev/prettier?style=for-the-badge&label=&color=f7b93e&logo=prettier&logoColor=fff)](https://prettier.io)
-[![License](https://img.shields.io/badge/LIC.-mit-404040?style=for-the-badge&labelColor=000)](https://github.com/miZyind/react-hirc/blob/master/LICENSE)
+[![Yarn](https://img.shields.io/badge/-~=1.22-2c8ebb?style=for-the-badge&label=&logo=yarn&logoColor=fff)](https://classic.yarnpkg.com)
+[![TypeScript](https://img.shields.io/github/package-json/dependency-version/mizyind/react-hirc/dev/typescript?style=for-the-badge&label=&color=007acc&logo=typescript&logoColor=fff)](https://www.typescriptlang.org)
+[![React](https://img.shields.io/npm/dependency-version/react-hirc/react?style=for-the-badge&label=&color=61dafb&logo=react&logoColor=000)](https://reactjs.org)
+[![Prettier](https://img.shields.io/npm/dependency-version/eslint-plugin-mizyind/prettier?style=for-the-badge&label=&color=f7b93e&logo=prettier&logoColor=000)](https://prettier.io)
+[![ESLint](https://img.shields.io/npm/dependency-version/eslint-plugin-mizyind/eslint?style=for-the-badge&label=&color=4b32c3&logo=eslint&logoColor=fff)](https://eslint.org)
 
+React Hooks (Immer + Reducer + Context)
 
-**React Hooks (Immer + Reducer + Context)**
+## 💠 Requirement
+
+- NodeJS >= 14
+- Yarn ~= 1.22
 
 ## Installation
 
